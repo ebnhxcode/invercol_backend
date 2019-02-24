@@ -14,6 +14,7 @@ class CreateUsuariosTable extends Migration
 
             $table->string('usuario_nombre');
             $table->string('usuario_email')->unique();
+            $table->string('password');
 
 
             $table->integer('role_id')->nullable();#No es tipo usuario, es el rol en el sistema
@@ -29,7 +30,7 @@ class CreateUsuariosTable extends Migration
             #
 
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            
 
             $table->rememberToken();
             $table->timestamps();
