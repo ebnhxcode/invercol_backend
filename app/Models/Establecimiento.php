@@ -51,6 +51,10 @@ class Establecimiento extends Model
 
   # Has Many
 
+  public function fichas_trabajadores () {
+    return $this->hasMany(\App\Models\FichaTrabajador::class, 'establecimiento_id');
+  } 
+
 
 
   # Has One

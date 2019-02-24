@@ -37,7 +37,9 @@ class TipoContrato extends Model
   }
 
   # Has Many
-
+  public function contratos () {
+    return $this->hasMany(\App\Models\Contrato::class, 'tipo_contrato_id');
+  } 
 
 
   # Has One

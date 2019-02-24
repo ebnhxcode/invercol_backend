@@ -13,7 +13,7 @@ class Contrato extends Model
     'contrato_horas_semanal',
     'contrato_sueldo_base',
 
-    'ficha_id',
+    'ficha_trabajador_id',
     'tipo_contrato_id',
     'cargo_id',
 
@@ -29,8 +29,8 @@ class Contrato extends Model
   # Belongs to
 
 
-  public function ficha () {
-    return $this->belongsTo(\App\Models\FichaTrabajador::class, 'ficha_id');
+  public function ficha_trabajador () {
+    return $this->belongsTo(\App\Models\FichaTrabajador::class, 'ficha_trabajador_id');
   }
 
   public function tipo_contrato () {

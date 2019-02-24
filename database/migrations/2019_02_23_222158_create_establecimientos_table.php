@@ -20,9 +20,9 @@ class CreateEstablecimientosTable extends Migration
             /**
              * Campos de seguimiento
              */
-            $table->integer('creado_por_usuario_id');
-            $table->integer('modificado_por_usuario_id');
-            $table->integer('eliminado_por_usuario_id');
+            $table->integer('creado_por_usuario_id')->nullable();
+            $table->integer('modificado_por_usuario_id')->nullable();
+            $table->integer('eliminado_por_usuario_id')->nullable();
             #
 
             $table->integer('region_id')->nullable();

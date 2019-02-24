@@ -39,7 +39,9 @@ class Cuenta extends Model
 
   # Has Many
 
-
+  public function libros_cuentas () {
+    return $this->hasMany(\App\Models\LibroCuenta::class, 'cuenta_id');
+  }
 
   # Has One
 }

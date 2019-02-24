@@ -39,6 +39,9 @@ class Libro extends Model
 
   # Has Many
 
+  public function libros_cuentas () {
+    return $this->hasMany(\App\Models\LibroCuenta::class, 'libro_id');
+  }
 
 
   # Has One

@@ -12,7 +12,7 @@ class CreateContratosTable extends Migration
         Schema::create('contratos', function (Blueprint $table) {
             $table->increments('contrato_id');
             
-            $table->integer('ficha_id')->nullable();
+            $table->integer('ficha_trabajador_id')->nullable();
             $table->integer('tipo_contrato_id')->nullable();
             $table->integer('cargo_id')->nullable();
             
@@ -23,9 +23,9 @@ class CreateContratosTable extends Migration
             /**
              * Campos de seguimiento
              */
-            $table->integer('creado_por_usuario_id');
-            $table->integer('modificado_por_usuario_id');
-            $table->integer('eliminado_por_usuario_id');
+            $table->integer('creado_por_usuario_id')->nullable();
+            $table->integer('modificado_por_usuario_id')->nullable();
+            $table->integer('eliminado_por_usuario_id')->nullable();
             #
             
             $table->timestamps();

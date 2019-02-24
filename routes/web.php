@@ -18,22 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-/*
-Route::resource('/frontend/cargos', '');
-Route::resource('/frontend/contratos', '');
-Route::resource('/frontend/cuentas', '');
-Route::resource('/frontend/establecimientos', '');
-Route::resource('/frontend/fichas_trabajadores', '');
-Route::resource('/frontend/ingresos', '');
-Route::resource('/frontend/libros', '');
-Route::resource('/frontend/libros_cuentas', '');
-Route::resource('/frontend/permisos', '');
-Route::resource('/frontend/roles', '');
-Route::resource('/frontend/subvenciones', '');
-Route::resource('/frontend/tipos_contratos', '');
-Route::resource('/frontend/tipos_documentos', '');
-Route::resource('/frontend/usuarios', '');
-*/
+
+Route::resource('/frontend/cargos', 'CargoController');
+Route::resource('/frontend/contratos', 'ContratoController');
+Route::resource('/frontend/cuentas', 'CuentaController');
+Route::resource('/frontend/establecimientos', 'EstablecimientoController');
+Route::resource('/frontend/fichas_trabajadores', 'FichaTrabajadorController');
+Route::resource('/frontend/ingresos', 'IngresoController');
+Route::resource('/frontend/libros', 'LibroController');
+Route::resource('/frontend/libros_cuentas', 'LibroCuentaController');
+Route::resource('/frontend/permisos', 'PermisoController');
+Route::resource('/frontend/roles', 'RoleController');
+Route::resource('/frontend/subvenciones', 'SubvencionController');
+Route::resource('/frontend/tipos_contratos', 'TipoContratoController');
+Route::resource('/frontend/tipos_documentos', 'TipoDocumentoController');
+Route::resource('/frontend/usuarios', 'UsuarioController');
 
 
 

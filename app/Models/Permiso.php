@@ -40,6 +40,10 @@ class Permiso extends Model
 
   # Has Many
 
+  public function roles () {
+    return $this->hasMany(\App\Models\Role::class, 'permiso_id');
+  }
+
 
 
   # Has One

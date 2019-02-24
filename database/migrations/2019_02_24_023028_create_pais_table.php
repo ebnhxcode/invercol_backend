@@ -6,26 +6,22 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePaisTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
-        Schema::create('pais', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('paises', function (Blueprint $table) {
+            $table->integer('pais_id');
+            $table->integer('pais_nombre')->nullable();
+
+            $table->integer('continente_id')->nullable();
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
-        Schema::dropIfExists('pais');
+        Schema::dropIfExists('paises');
     }
 }

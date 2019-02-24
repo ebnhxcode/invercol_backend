@@ -6,24 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateComunasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('comunas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('comuna_id');
+            $table->string('comuna_nombre', 255)->nullable();
+
+            $table->integer('region_id')->nullable();
+            
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('comunas');

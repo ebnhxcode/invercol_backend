@@ -51,6 +51,9 @@ class FichaTrabajador extends Model
 
   # Has Many
 
+  public function contratos () {
+    return $this->hasMany(\App\Models\Contrato::class, 'ficha_trabajador_id');
+  } 
 
 
   # Has One

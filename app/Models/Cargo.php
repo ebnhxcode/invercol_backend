@@ -36,7 +36,9 @@ class Cargo extends Model {
   }
 
   # Has Many
-
+  public function contratos () {
+    return $this->hasMany(\App\Models\Contrato::class, 'cargo_id');
+  } 
 
 
   # Has One
