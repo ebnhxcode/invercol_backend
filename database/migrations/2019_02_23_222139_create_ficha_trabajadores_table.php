@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFichaTrabajadorsTable extends Migration
+class CreateFichaTrabajadoresTable extends Migration
 {
 
     public function up()

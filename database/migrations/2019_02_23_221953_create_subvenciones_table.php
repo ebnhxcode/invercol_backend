@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubvencionsTable extends Migration
+class CreateSubvencionesTable extends Migration
 {
 
     public function up()
@@ -13,7 +13,7 @@ class CreateSubvencionsTable extends Migration
           $table->increments('subvencion_id');
           
           $table->string('subvencion_codigo', 255)->nullable();
-          $table->string('subvencion_nombre', 255->nullable();
+          $table->string('subvencion_nombre', 255)->nullable();
           $table->string('subvencion_descripcion', 5000)->nullable();
           
 
