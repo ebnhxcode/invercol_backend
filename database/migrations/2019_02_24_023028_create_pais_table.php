@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFichaTrabajadorsTable extends Migration
+class CreatePaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFichaTrabajadorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ficha_trabajadors', function (Blueprint $table) {
+        Schema::create('pais', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateFichaTrabajadorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ficha_trabajadors');
+        Schema::dropIfExists('pais');
     }
 }

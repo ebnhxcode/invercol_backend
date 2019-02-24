@@ -6,24 +6,29 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTipoDocumentosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('tipo_documentos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('tipo_documento_id');
+            
+            $table->string('tipo_documento_codigo', 255)->nullable();
+            $table->string('tipo_documento_nombre', 255)->nullable();
+            $table->string('tipo_documento_descripcion', 5000)->nullable();
+            
+            /**
+             * Campos de seguimiento
+             */
+            $table->integer('creado_por_usuario_id');
+            $table->integer('modificado_por_usuario_id');
+            $table->integer('eliminado_por_usuario_id');
+            #
+            
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('tipo_documentos');

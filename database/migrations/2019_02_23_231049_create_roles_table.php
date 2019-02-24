@@ -4,15 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLibroCuentasTable extends Migration
+class CreateRolesTable extends Migration
 {
+
     public function up()
     {
-        Schema::create('libro_cuentas', function (Blueprint $table) {
-          $table->increments('libro_cuenta_id');
+        Schema::create('roles', function (Blueprint $table) {
+          $table->increments('role_id');
 
-          $table->integer('libro_id')->nullable();
-          $table->integer('cuenta_id')->nullable();
+          $table->string('role_nombre', 255)->nullable();
+          $table->string('role_descripcion', 5000)->nullable();
+
+          $table->integer('role_orden')->nullable();
+
+          $table->integer('permiso_id')->nullable();
 
           /**
            * Campos de seguimiento
@@ -28,6 +33,6 @@ class CreateLibroCuentasTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('libro_cuentas');
+        Schema::dropIfExists('roles');
     }
 }

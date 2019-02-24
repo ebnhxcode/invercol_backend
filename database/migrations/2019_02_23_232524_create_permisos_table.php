@@ -4,19 +4,19 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCuentasTable extends Migration
+class CreatePermisosTable extends Migration
 {
 
     public function up()
     {
-        Schema::create('cuentas', function (Blueprint $table) {
-            $table->increments('cuenta_id');
+        Schema::create('permisos', function (Blueprint $table) {
+            $table->increments('permiso_id');
 
-            $table->string('cuenta_codigo', 255)->nullable();
-            $table->string('cuenta_nombre', 255)->nullable();
-            $table->string('cuenta_descripcion', 5000)->nullable();
-            
+            $table->string('permiso_nombre', 255)->nullable();
+            $table->string('permiso_descripcion', 5000)->nullable();
 
+            $table->integer('permiso_nivel')->nullable();
+            $table->integer('permiso_orden')->nullable();
 
             /**
              * Campos de seguimiento
@@ -26,7 +26,6 @@ class CreateCuentasTable extends Migration
             $table->integer('eliminado_por_usuario_id');
             #
 
-
             $table->timestamps();
         });
     }
@@ -34,6 +33,6 @@ class CreateCuentasTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('cuentas');
+        Schema::dropIfExists('permisos');
     }
 }

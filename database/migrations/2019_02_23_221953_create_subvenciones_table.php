@@ -4,15 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLibroCuentasTable extends Migration
+class CreateSubvencionsTable extends Migration
 {
+
     public function up()
     {
-        Schema::create('libro_cuentas', function (Blueprint $table) {
-          $table->increments('libro_cuenta_id');
-
-          $table->integer('libro_id')->nullable();
-          $table->integer('cuenta_id')->nullable();
+        Schema::create('subvenciones', function (Blueprint $table) {
+          $table->increments('subvencion_id');
+          
+          $table->string('subvencion_codigo', 255)->nullable();
+          $table->string('subvencion_nombre', 255->nullable();
+          $table->string('subvencion_descripcion', 5000)->nullable();
+          
 
           /**
            * Campos de seguimiento
@@ -28,6 +31,6 @@ class CreateLibroCuentasTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('libro_cuentas');
+        Schema::dropIfExists('subvenciones');
     }
 }

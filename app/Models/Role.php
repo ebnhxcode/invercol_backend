@@ -4,15 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cuenta extends Model
+class Role extends Model
 {
-  protected $table = "cuentas";
-  protected $primaryKey = "cuenta_id";
+  protected $table = "roles";
+  protected $primaryKey = "role_id";
   protected $fillable = [
-    'cuenta_codigo',
-    'cuenta_nombre',
-    'cuenta_descripcion',
+    'role_nombre',
+    'role_descripcion',
+    
+    'role_orden',
 
+
+    'permiso_id',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',
@@ -24,6 +27,10 @@ class Cuenta extends Model
 
 
   # Belongs to
+
+  public function permiso () {
+    return $this->belongsTo(\App\Models\Permiso::class, 'permiso_id');
+  }
 
   public function usuario_creador () {
     return $this->belongsTo(\App\Models\Usuario::class, 'creado_por_usuario_id');

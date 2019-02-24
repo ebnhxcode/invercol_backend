@@ -4,20 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cuenta extends Model
+class Permiso extends Model
 {
-  protected $table = "cuentas";
-  protected $primaryKey = "cuenta_id";
+  protected $table = "permisos";
+  protected $primaryKey = "permiso_id";
   protected $fillable = [
-    'cuenta_codigo',
-    'cuenta_nombre',
-    'cuenta_descripcion',
+    'permiso_nombre',
+    'permiso_descripcion',
 
+    'permiso_nivel',
+    'permiso_orden',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',
     'eliminado_por_usuario_id',
-
 
   ];
 
@@ -36,6 +36,7 @@ class Cuenta extends Model
   public function usuario_eliminador () {
     return $this->belongsTo(\App\Models\Usuario::class, 'eliminado_por_usuario_id');
   }
+
 
   # Has Many
 

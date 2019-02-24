@@ -6,24 +6,33 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateEstablecimientosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('establecimientos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('establecimiento_id');
+
+            $table->string('establecimiento_rbd', 255)->nullable();
+            $table->string('establecimiento_nombre', 255)->nullable();
+            $table->string('establecimiento_direccion', 255)->nullable();
+            $table->string('establecimiento_descripcion', 5000)->nullable();
+
+            /**
+             * Campos de seguimiento
+             */
+            $table->integer('creado_por_usuario_id');
+            $table->integer('modificado_por_usuario_id');
+            $table->integer('eliminado_por_usuario_id');
+            #
+
+            $table->integer('region_id')->nullable();
+            $table->integer('comuna_id')->nullable();
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('establecimientos');
