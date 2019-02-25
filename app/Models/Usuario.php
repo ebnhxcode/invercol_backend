@@ -252,6 +252,20 @@ class Usuario extends Authenticatable
     return $this->hasMany(\App\Models\LibroTipoDocumento::class, 'usuario_id', 'eliminado_por_usuario_id');
   }
 
+  /**
+   * Cuenta Dependencias
+   */
+  public function cuenta_dependencias_creados () {
+    return $this->hasMany(\App\Models\CuentaDependencia::class, 'usuario_id', 'creado_por_usuario_id');
+  }
+
+  public function cuenta_dependencias_modificados () {
+    return $this->hasMany(\App\Models\CuentaDependencia::class, 'usuario_id', 'modificado_por_usuario_id');
+  }
+
+  public function cuenta_dependencias_eliminados () {
+    return $this->hasMany(\App\Models\CuentaDependencia::class, 'usuario_id', 'eliminado_por_usuario_id');
+  }
 
 
   /**

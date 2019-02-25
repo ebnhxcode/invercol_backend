@@ -4,33 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cuenta extends Model
+class CuentaDependencia extends Model
 {
-  protected $table = "cuentas";
-  protected $primaryKey = "cuenta_id";
+  protected $table = "cuenta_dependencias";
+  protected $primaryKey = "cuenta_dependencia_id";
   protected $fillable = [
-    'cuenta_codigo',
-    'cuenta_nombre',
-    'cuenta_descripcion',
-
-    'cuenta_titular',
-
-    'cuenta_dependencia_id',
+    'cuenta_dependencia_codigo',
+    'cuenta_dependencia_nombre',
+    'cuenta_dependencia_descripcion',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',
     'eliminado_por_usuario_id',
-
 
   ];
 
 
 
   # Belongs to
-
-  public function dependencia () {
-    return $this->belongsTo(\App\Models\Dependencia::class, 'cuenta_dependencia_id');
-  }
 
   public function usuario_creador () {
     return $this->belongsTo(\App\Models\Usuario::class, 'creado_por_usuario_id');
@@ -44,15 +35,11 @@ class Cuenta extends Model
     return $this->belongsTo(\App\Models\Usuario::class, 'eliminado_por_usuario_id');
   }
 
-
-
   # Has Many
+  public function cuentas () {
+    return $this->hasMany(\App\Models\Cuenta::class, 'cuenta_dependencia_id');
+  } 
 
-  public function libros_cuentas () {
-    return $this->hasMany(\App\Models\LibroCuenta::class, 'cuenta_id');
-  }
-
-  
 
   # Has One
 }

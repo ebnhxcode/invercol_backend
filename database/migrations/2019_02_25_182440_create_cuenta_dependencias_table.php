@@ -4,21 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCuentasTable extends Migration
+class CreateCuentaDependenciasTable extends Migration
 {
 
     public function up()
     {
-        Schema::create('cuentas', function (Blueprint $table) {
-            $table->increments('cuenta_id');
-
-            $table->string('cuenta_codigo', 255)->nullable();
-            $table->string('cuenta_nombre', 255)->nullable();
-            $table->string('cuenta_descripcion', 5000)->nullable();
+        Schema::create('cuenta_dependencias', function (Blueprint $table) {
+            $table->increments('cuenta_dependencia_id');
             
-            $table->integer('cuenta_titular')->nullable();
-            
-
+            $table->string('cuenta_dependencia_codigo', 255)->nullable();
+            $table->string('cuenta_dependencia_nombre', 255)->nullable();
+            $table->string('cuenta_dependencia_descripcion', 5000)->nullable();
 
             /**
              * Campos de seguimiento
@@ -28,14 +24,12 @@ class CreateCuentasTable extends Migration
             $table->integer('eliminado_por_usuario_id')->nullable();
             #
 
-
             $table->timestamps();
         });
     }
 
-
     public function down()
     {
-        Schema::dropIfExists('cuentas');
+        Schema::dropIfExists('cuenta_dependencias');
     }
 }
