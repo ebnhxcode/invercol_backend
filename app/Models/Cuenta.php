@@ -28,8 +28,8 @@ class Cuenta extends Model
 
   # Belongs to
 
-  public function dependencia () {
-    return $this->belongsTo(\App\Models\Dependencia::class, 'cuenta_dependencia_id');
+  public function cuenta_dependencia () {
+    return $this->belongsTo(\App\Models\CuentaDependencia::class, 'cuenta_dependencia_id');
   }
 
   public function usuario_creador () {

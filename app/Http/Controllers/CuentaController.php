@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Cuenta;
 
 class CuentaController extends Controller
 {
   public function index()
   {
-    $this->cuentas = Cuenta::all(); 
+    $this->cuentas = Cuenta::with(['cuenta_dependencia'])->get(); 
     return $this->cuentas;
   }
 

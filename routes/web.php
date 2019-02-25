@@ -33,6 +33,9 @@ Route::resource('/frontend/subvenciones', 'SubvencionController');
 Route::resource('/frontend/tipos_contratos', 'TipoContratoController');
 Route::resource('/frontend/tipos_documentos', 'TipoDocumentoController');
 Route::resource('/frontend/usuarios', 'UsuarioController');
+Route::resource('/frontend/paises', 'PaisController');
+Route::resource('/frontend/regiones', 'RegionController');
+Route::resource('/frontend/comunas', 'ComunaController');
 
 
 
