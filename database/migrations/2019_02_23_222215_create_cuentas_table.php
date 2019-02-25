@@ -10,7 +10,7 @@ class CreateCuentasTable extends Migration
     public function up()
     {
         Schema::create('cuentas', function (Blueprint $table) {
-            $table->increments('cuenta_id');
+            $table->integer('cuenta_id');
 
             $table->string('cuenta_codigo', 255)->nullable();
             $table->string('cuenta_nombre', 255)->nullable();
