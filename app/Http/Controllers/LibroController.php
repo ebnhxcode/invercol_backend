@@ -10,7 +10,7 @@ class LibroController extends Controller
 
   public function index()
   {
-    $this->libros = Libro::all(); 
+    $this->libros = Libro::with(['libros_cuentas.cuenta'])->get(); 
     return $this->libros;
   }
 

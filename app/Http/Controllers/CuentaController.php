@@ -9,7 +9,7 @@ class CuentaController extends Controller
 {
   public function index()
   {
-    $this->cuentas = Cuenta::with(['cuenta_dependencia'])->get(); 
+    $this->cuentas = Cuenta::with(['cuenta_dependencia', 'libros_cuentas'])->get(); 
     return $this->cuentas;
   }
 
