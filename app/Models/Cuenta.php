@@ -13,6 +13,7 @@ class Cuenta extends Model
     'cuenta_nombre',
     'cuenta_descripcion',
 
+    'cuenta_es_padre',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',

@@ -16,6 +16,8 @@ class CreateCuentasTable extends Migration
             $table->string('cuenta_nombre', 255)->nullable();
             $table->string('cuenta_descripcion', 5000)->nullable();
             
+            $table->integer('cuenta_es_padre')->nullable();
+            
 
 
             /**
