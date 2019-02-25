@@ -1,0 +1,15 @@
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (1,'De Tarapacá','I',2,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (2,'De Antofagasta','II',3,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (3,'De Atacama','III',4,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (4,'De Coquimbo','IV',5,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (5,'De Valparaíso','V',6,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (6,'Del Libertador B. O´Higgins','VI',8,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (7,'Del Maule','VII',9,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (8,'Del Biobío','VIII',10,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (9,'De La Araucanía','IX',11,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (10,'De Los Lagos','X',13,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (11,'De Aisén del Gral.C.Ibañez del Campo','XI',14,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (12,'De Magallanes  y de La Antártica chilena','XII',15,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (13,'Metropolitana De Santiago','RM',7,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (14,'De Los Rios','XIV',12,43);
+insert into regiones (region_id,region_nombre,region_alias,region_orden,pais_id) values (15,'De Arica y Parinacota','XV',1,43);

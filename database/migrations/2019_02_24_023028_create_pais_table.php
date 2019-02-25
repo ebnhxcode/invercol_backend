@@ -11,7 +11,7 @@ class CreatePaisTable extends Migration
     {
         Schema::create('paises', function (Blueprint $table) {
             $table->integer('pais_id');
-            $table->integer('pais_nombre')->nullable();
+            $table->string('pais_nombre', 255)->nullable();
 
             $table->integer('continente_id')->nullable();
 
