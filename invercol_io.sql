@@ -366,7 +366,7 @@ CREATE TABLE `libros` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`libro_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -375,7 +375,7 @@ CREATE TABLE `libros` (
 
 LOCK TABLES `libros` WRITE;
 /*!40000 ALTER TABLE `libros` DISABLE KEYS */;
-INSERT INTO `libros` VALUES (1,'Código sin ingresar','Libro de Compras y Otros Gastos','Sin descripción',NULL,NULL,NULL,NULL,NULL),(2,'Código sin ingresar','Libro de Compras y Honorarios','Sin descripción',NULL,NULL,NULL,NULL,NULL),(3,'Código sin ingresar','Libro de Remuneraciones','Sin descripción',NULL,NULL,NULL,NULL,NULL),(4,'Código sin inesar','Libro de Otros Ingresos','Sin descripción',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `libros` VALUES (1,'Cdigo sin ingresar','Libro de Compras y Otros Gastos','Sin descripcin',NULL,NULL,NULL,NULL,NULL),(2,'Cdigo sin ingresar','Libro de Compras','Sin descripcin',NULL,NULL,NULL,NULL,NULL),(3,'Cdigo sin ingresar','Libro de Honorarios','Sin descripcin',NULL,NULL,NULL,NULL,NULL),(4,'Cdigo sin ingresar','Libro de Remuneraciones','Sin descripcin',NULL,NULL,NULL,NULL,NULL),(5,'Cdigo sin ingresar','Libro de Otros Ingresos','Sin descripcin',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `libros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -734,4 +734,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-25 16:29:54
+-- Dump completed on 2019-02-25 17:35:38
