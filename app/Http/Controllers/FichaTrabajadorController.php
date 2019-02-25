@@ -6,79 +6,46 @@ use Illuminate\Http\Request;
 
 class FichaTrabajadorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index()
+  {
+    $this->ficha_trabajadores = FichaTrabajador::all(); 
+    return $this->ficha_trabajadores;
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  public function create()
+  {
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  public function store(Request $request)
+  {
+    $this->ficha_trabajador = FichaTrabajador::create($request->all());
+    return $this->ficha_trabajador;
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+  public function show($id)
+  {
+    $this->ficha_trabajador = FichaTrabajador::find($id);
+    return $this->ficha_trabajador;
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  public function edit($id)
+  {
+
+  }
+
+  public function update(Request $request, $id)
+  {
+    $this->ficha_trabajador = FichaTrabajador::find($id);
+    $this->ficha_trabajador = $this->ficha_trabajador->update($request->all());
+    return $this->ficha_trabajador;
+
+  }
+
+  public function destroy($id)
+  {
+    $this->ficha_trabajador = FichaTrabajador::find($id);
+    $this->ficha_trabajador = $this->ficha_trabajador->delete();
+  }
 }

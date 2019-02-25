@@ -6,79 +6,47 @@ use Illuminate\Http\Request;
 
 class ComunaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  public function index()
+  {
+    $this->comunas = Comuna::all(); 
+    return $this->comunas;
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  public function create()
+  {
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+  public function store(Request $request)
+  {
+    $this->comuna = Comuna::create($request->all());
+    return $this->comuna;
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+  public function show($id)
+  {
+    $this->comuna = Comuna::find($id);
+    return $this->comuna;
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
+  public function edit($id)
+  {
+
+  }
+
+  public function update(Request $request, $id)
+  {
+    $this->comuna = Comuna::find($id);
+    $this->comuna = $this->comuna->update($request->all());
+    return $this->comuna;
+
+  }
+
+  public function destroy($id)
+  {
+    $this->comuna = Comuna::find($id);
+    $this->comuna = $this->comuna->delete();
+  }
 }

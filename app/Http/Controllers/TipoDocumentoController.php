@@ -6,79 +6,46 @@ use Illuminate\Http\Request;
 
 class TipoDocumentoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index()
+  {
+    $this->tipo_documentos = TipoDocumento::all(); 
+    return $this->tipo_documentos;
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  public function create()
+  {
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  public function store(Request $request)
+  {
+    $this->tipo_documento = TipoDocumento::create($request->all());
+    return $this->tipo_documento;
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+  public function show($id)
+  {
+    $this->tipo_documento = TipoDocumento::find($id);
+    return $this->tipo_documento;
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  public function edit($id)
+  {
+
+  }
+
+  public function update(Request $request, $id)
+  {
+    $this->tipo_documento = TipoDocumento::find($id);
+    $this->tipo_documento = $this->tipo_documento->update($request->all());
+    return $this->tipo_documento;
+
+  }
+
+  public function destroy($id)
+  {
+    $this->tipo_documento = TipoDocumento::find($id);
+    $this->tipo_documento = $this->tipo_documento->delete();
+  }
 }

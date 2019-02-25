@@ -237,6 +237,21 @@ class Usuario extends Authenticatable
   }
 
 
+  /**
+   * Libros Tipos Documentos
+   */
+  public function libros_tipos_documentos_creados () {
+    return $this->hasMany(\App\Models\LibroTipoDocumento::class, 'usuario_id', 'creado_por_usuario_id');
+  }
+
+  public function libros_tipos_documentos_modificados () {
+    return $this->hasMany(\App\Models\LibroTipoDocumento::class, 'usuario_id', 'modificado_por_usuario_id');
+  }
+
+  public function libros_tipos_documentos_eliminados () {
+    return $this->hasMany(\App\Models\LibroTipoDocumento::class, 'usuario_id', 'eliminado_por_usuario_id');
+  }
+
 
 
   /**

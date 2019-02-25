@@ -6,79 +6,46 @@ use Illuminate\Http\Request;
 
 class ContinenteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index()
+  {
+    $this->continentes = Continente::all(); 
+    return $this->continentes;
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  public function create()
+  {
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  public function store(Request $request)
+  {
+    $this->continente = Continente::create($request->all());
+    return $this->continente;
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+  public function show($id)
+  {
+    $this->continente = Continente::find($id);
+    return $this->continente;
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  public function edit($id)
+  {
+
+  }
+
+  public function update(Request $request, $id)
+  {
+    $this->continente = Continente::find($id);
+    $this->continente = $this->continente->update($request->all());
+    return $this->continente;
+
+  }
+
+  public function destroy($id)
+  {
+    $this->continente = Continente::find($id);
+    $this->continente = $this->continente->delete();
+  }
 }

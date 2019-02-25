@@ -6,79 +6,47 @@ use Illuminate\Http\Request;
 
 class LibroCuentaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index()
+  public function index()
+  {
+    $this->libro_cuentas = LibroCuenta::all(); 
+    return $this->libro_cuentas;
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  public function create()
+  {
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  public function store(Request $request)
+  {
+    $this->libro_cuenta = LibroCuenta::create($request->all());
+    return $this->libro_cuenta;
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+  public function show($id)
+  {
+    $this->libro_cuenta = LibroCuenta::find($id);
+    return $this->libro_cuenta;
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  public function edit($id)
+  {
+
+  }
+
+  public function update(Request $request, $id)
+  {
+    $this->libro_cuenta = LibroCuenta::find($id);
+    $this->libro_cuenta = $this->libro_cuenta->update($request->all());
+    return $this->libro_cuenta;
+
+  }
+
+  public function destroy($id)
+  {
+    $this->libro_cuenta = LibroCuenta::find($id);
+    $this->libro_cuenta = $this->libro_cuenta->delete();
+  }
 }

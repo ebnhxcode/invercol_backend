@@ -43,6 +43,9 @@ class Libro extends Model
     return $this->hasMany(\App\Models\LibroCuenta::class, 'libro_id');
   }
 
+  public function libros_tipo_documentos () {
+    return $this->hasMany(\App\Models\LibroTipoDocumento::class, 'libro_id');
+  }
 
   # Has One
 }
