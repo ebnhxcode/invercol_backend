@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/frontend/cargos', 'CargoController');
 Route::resource('/frontend/contratos', 'ContratoController');
 Route::resource('/frontend/cuentas', 'CuentaController');
+Route::resource('/frontend/cuenta_dependencias', 'CuentaDependenciaController');
 Route::resource('/frontend/establecimientos', 'EstablecimientoController');
 Route::resource('/frontend/fichas_trabajadores', 'FichaTrabajadorController');
 Route::resource('/frontend/ingresos', 'IngresoController');
