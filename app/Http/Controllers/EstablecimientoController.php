@@ -9,7 +9,7 @@ class EstablecimientoController extends Controller
 {
   public function index()
   {
-    $this->establecimientos = Establecimiento::all(); 
+    $this->establecimientos = Establecimiento::with(['region', 'comuna'])->get(); 
     return $this->establecimientos;
   }
 
