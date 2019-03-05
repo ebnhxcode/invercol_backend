@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/**
+ * Rutas de recursos completos
+ */
 Route::resource('/frontend/cargos', 'CargoController');
 Route::resource('/frontend/contratos', 'ContratoController');
 Route::resource('/frontend/cuentas', 'CuentaController');
