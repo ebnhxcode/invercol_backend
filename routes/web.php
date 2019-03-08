@@ -25,12 +25,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/frontend/cargos', 'CargoController');
 Route::resource('/frontend/contratos', 'ContratoController');
 Route::resource('/frontend/cuentas', 'CuentaController');
-#Route::resource('/frontend/cuenta_dependencias', 'CuentaDependenciaController');
+Route::resource('/frontend/cuenta_dependencias', 'CuentaDependenciaController');
 Route::resource('/frontend/establecimientos', 'EstablecimientoController');
 Route::resource('/frontend/fichas_trabajadores', 'FichaTrabajadorController');
 Route::resource('/frontend/ingresos', 'IngresoController');
 Route::resource('/frontend/libros', 'LibroController');
-Route::post('/frontend/libros/eliminar', 'LibroController@eliminarLibro');
+#Route::post('/frontend/libros/eliminar', 'LibroController@eliminarLibro');
 #Route::resource('/frontend/libros_cuentas', 'LibroCuentaController');
 Route::resource('/frontend/permisos', 'PermisoController');
 Route::resource('/frontend/roles', 'RoleController');
@@ -41,7 +41,3 @@ Route::resource('/frontend/usuarios', 'UsuarioController');
 Route::resource('/frontend/paises', 'PaisController');
 Route::resource('/frontend/regiones', 'RegionController');
 Route::resource('/frontend/comunas', 'ComunaController');
-
-
-
-
