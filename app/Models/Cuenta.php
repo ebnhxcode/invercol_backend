@@ -9,6 +9,7 @@ class Cuenta extends Model
   protected $table = "cuentas";
   protected $primaryKey = "cuenta_id";
   protected $fillable = [
+    'cuenta_id',
     'cuenta_codigo',
     'cuenta_nombre',
     'cuenta_descripcion',

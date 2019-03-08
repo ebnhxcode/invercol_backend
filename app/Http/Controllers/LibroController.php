@@ -41,7 +41,7 @@ class LibroController extends Controller
   {
     $this->libro = Libro::find($id);
     $this->libro = $this->libro->update($request->all());
-    return $this->libro;
+    return response()->json($this->libro);
 
   }
 

@@ -40,8 +40,7 @@ class CuentaController extends Controller
   {
     $this->cuenta = Cuenta::find($id);
     $this->cuenta = $this->cuenta->update($request->all());
-    return $this->cuenta;
-
+    return response()->json($this->cuenta);
   }
 
   public function destroy($id)
