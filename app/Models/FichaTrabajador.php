@@ -11,16 +11,19 @@ class FichaTrabajador extends Model
   protected $fillable = [
     'ficha_rut',
     'ficha_dv',
-
     'ficha_genero',
     'ficha_nombre',
     'ficha_apellido_paterno',
     'ficha_apellido_materno',
-
     'ficha_fecha_nacimiento',
 
-
+    'ficha_fecha_ingreso',
     'establecimiento_id',
+    'cargo_id',
+    'sueldo_base',
+    'horas_semanales',
+    'horas_extras',
+    'bono',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',
@@ -32,6 +35,10 @@ class FichaTrabajador extends Model
 
 
   # Belongs to
+
+  public function cargo () {
+    return $this->belongsTo(\App\Models\Cargo::class, 'cargo_id');
+  }
 
   public function establecimiento () {
     return $this->belongsTo(\App\Models\Establecimiento::class, 'establecimiento_id');

@@ -16,6 +16,8 @@ class CreateCargosTable extends Migration
             $table->string('cargo_nombre', 255)->nullable();
             $table->string('cargo_descripcion', 5000)->nullable();
 
+            $table->integer('tipo_cargo_id')->nullable();
+
             /**
              * Campos de seguimiento
              */

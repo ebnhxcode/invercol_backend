@@ -41,7 +41,7 @@ class CargoController extends Controller
   {
     $this->cargo = Cargo::find($id);
     $this->cargo = $this->cargo->update($request->all());
-    return $this->cargo;
+    return response()->json($this->cargo);
 
   }
 

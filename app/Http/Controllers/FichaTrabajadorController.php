@@ -40,7 +40,7 @@ class FichaTrabajadorController extends Controller
   {
     $this->ficha_trabajador = FichaTrabajador::find($id);
     $this->ficha_trabajador = $this->ficha_trabajador->update($request->all());
-    return $this->ficha_trabajador;
+    return response()->json($this->ficha_trabajador);
 
   }
 

@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Cuenta;
 
+
 class CuentaController extends Controller
 {
   public function index()
   {
-    $this->cuentas = Cuenta::with(['cuenta_dependencia', 'libros_cuentas'])->get(); 
+    $this->cuentas = Cuenta::with(['cuenta_dependencia', 'libros_cuentas.libro'])->get(); 
     return $this->cuentas;
   }
 
@@ -47,5 +48,12 @@ class CuentaController extends Controller
   {
     $this->cuenta = Cuenta::find($id);
     $this->cuenta = $this->cuenta->delete();
+  }
+
+  public function asociarLibroACuenta (Request $request) {
+    $this->cuenta_id = $request->cuenta_id;
+    $this->libro_id = $request->libro_id;
+
+
   }
 }

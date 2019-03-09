@@ -47,6 +47,9 @@ class Cargo extends Model {
     return $this->hasMany(\App\Models\Contrato::class, 'cargo_id');
   } 
 
+  public function fichas_trabajadores () {
+    return $this->hasMany(\App\Models\FichaTrabajador::class, 'cargo_id');
+  } 
 
   # Has One
 
