@@ -8,10 +8,33 @@ use \App\Models\Cuenta;
 
 class CuentaController extends Controller
 {
-  public function index()
+
+  private $per_page;
+
+  public function validatePagination ($request) {
+    if (!$request->per_page) {
+        $this->per_page = 10;
+    } else {
+        $this->per_page = $request->per_page;
+    }
+  }
+
+  public function index(Request $request)
   {
-    $this->cuentas = Cuenta::with(['cuenta_dependencia', 'libros_cuentas.libro'])->get(); 
-    return $this->cuentas;
+    $this->validatePagination($request);
+
+    $this->cuentas = Cuenta::with(['cuenta_dependencia', 'libros_cuentas.libro']); 
+
+    if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
+            
+      return response()->json([
+        'status'=>200,
+        'msg'=>'ok',
+        'cuentas'=>$this->cuentas->paginate((int)$this->per_page),
+      ]);
+    }
+
+    return $this->cuentas->get();
   }
 
   public function create()
