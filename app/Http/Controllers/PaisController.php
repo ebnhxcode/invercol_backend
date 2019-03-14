@@ -40,7 +40,7 @@ class PaisController extends Controller
   {
     $this->pais = Pais::find($id);
     $this->pais = $this->pais->update($request->all());
-    return $this->pais;
+    return response()->json($this->pais);
 
   }
 

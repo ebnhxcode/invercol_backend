@@ -40,7 +40,7 @@ class ContratoController extends Controller
   {
     $this->contrato = Contrato::find($id);
     $this->contrato = $this->contrato->update($request->all());
-    return $this->contrato;
+    return response()->json($this->contrato);
 
   }
 

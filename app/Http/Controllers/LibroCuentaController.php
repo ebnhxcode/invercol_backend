@@ -53,7 +53,7 @@ class LibroCuentaController extends Controller
   {
     $this->libro_cuenta = LibroCuenta::find($id);
     $this->libro_cuenta = $this->libro_cuenta->update($request->all());
-    return $this->libro_cuenta;
+    return response()->json($this->libro_cuenta);
 
   }
 

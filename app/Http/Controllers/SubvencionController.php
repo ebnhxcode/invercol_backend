@@ -40,7 +40,7 @@ class SubvencionController extends Controller
   {
     $this->subvencion = Subvencion::find($id);
     $this->subvencion = $this->subvencion->update($request->all());
-    return $this->subvencion;
+    return response()->json($this->subvencion);
 
   }
 

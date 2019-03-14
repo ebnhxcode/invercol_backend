@@ -41,7 +41,7 @@ class ComunaController extends Controller
   {
     $this->comuna = Comuna::find($id);
     $this->comuna = $this->comuna->update($request->all());
-    return $this->comuna;
+    return response()->json($this->comuna);
 
   }
 

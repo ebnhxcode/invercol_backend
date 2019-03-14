@@ -40,7 +40,7 @@ class EstablecimientoController extends Controller
   {
     $this->establecimiento = Establecimiento::find($id);
     $this->establecimiento = $this->establecimiento->update($request->all());
-    return $this->establecimiento;
+    return response()->json($this->establecimiento);
 
   }
 

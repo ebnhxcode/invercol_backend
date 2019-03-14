@@ -40,7 +40,7 @@ class RegionController extends Controller
   {
     $this->region = Region::find($id);
     $this->region = $this->region->update($request->all());
-    return $this->region;
+    return response()->json($this->region);
 
   }
 

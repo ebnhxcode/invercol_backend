@@ -40,7 +40,7 @@ class RoleController extends Controller
   {
     $this->role = Role::find($id);
     $this->role = $this->role->update($request->all());
-    return $this->role;
+    return response()->json($this->role);
 
   }
 

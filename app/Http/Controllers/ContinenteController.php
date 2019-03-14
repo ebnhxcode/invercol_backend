@@ -40,7 +40,7 @@ class ContinenteController extends Controller
   {
     $this->continente = Continente::find($id);
     $this->continente = $this->continente->update($request->all());
-    return $this->continente;
+    return response()->json($this->continente);
 
   }
 

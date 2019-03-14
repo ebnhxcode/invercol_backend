@@ -40,7 +40,7 @@ class TipoDocumentoController extends Controller
   {
     $this->tipo_documento = TipoDocumento::find($id);
     $this->tipo_documento = $this->tipo_documento->update($request->all());
-    return $this->tipo_documento;
+    return response()->json($this->tipo_documento);
 
   }
 

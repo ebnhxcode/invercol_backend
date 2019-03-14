@@ -40,7 +40,7 @@ class PermisoController extends Controller
   {
     $this->permiso = Permiso::find($id);
     $this->permiso = $this->permiso->update($request->all());
-    return $this->permiso;
+    return response()->json($this->permiso);
 
   }
 

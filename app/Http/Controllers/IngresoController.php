@@ -40,7 +40,7 @@ class IngresoController extends Controller
   {
     $this->ingreso = Ingreso::find($id);
     $this->ingreso = $this->ingreso->update($request->all());
-    return $this->ingreso;
+    return response()->json($this->ingreso);
 
   }
 

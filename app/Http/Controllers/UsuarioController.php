@@ -40,7 +40,7 @@ class UsuarioController extends Controller
   {
     $this->usuario = Usuario::find($id);
     $this->usuario = $this->usuario->update($request->all());
-    return $this->usuario;
+    return response()->json($this->usuario);
 
   }
 

@@ -40,7 +40,7 @@ class TipoContratoController extends Controller
   {
     $this->tipo_contrato = TipoContrato::find($id);
     $this->tipo_contrato = $this->tipo_contrato->update($request->all());
-    return $this->tipo_contrato;
+    return response()->json($this->tipo_contrato);
 
   }
 
