@@ -681,7 +681,7 @@ insert into cargos (tipo_cargo_id,cargo_codigo,cargo_nombre) values (2,'TEC','T�
 -- TIPO CONTRATOS
 
 insert into tipo_contratos (tipo_contrato_nombre,tipo_contrato_descripcion,tipo_contrato_codigo) values ('Contrato Plazo Fijo','Sin Descripción','CPF');
-insert into libros (tipo_contrato_nombre,tipo_contrato_descripcion,tipo_contrato_codigo) values ('Contrato Indefinido','Sin Descripción','CI');
+insert into tipo_contratos (tipo_contrato_nombre,tipo_contrato_descripcion,tipo_contrato_codigo) values ('Contrato Indefinido','Sin Descripción','CI');
 
 
 
