@@ -11,7 +11,7 @@ class CreateContratosTable extends Migration
     {
         Schema::create('contratos', function (Blueprint $table) {
             $table->increments('contrato_id');
-            
+
             $table->integer('ficha_trabajador_id')->nullable();
             $table->integer('tipo_contrato_id')->nullable();
             $table->integer('cargo_id')->nullable();

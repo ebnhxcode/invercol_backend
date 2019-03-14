@@ -634,8 +634,7 @@ insert into comunas (comuna_id,region_id,comuna_nombre) values (15202,15,'Genera
 
 -- TIPO VALORES MONETARIOS
 
-insert into tipo_valores_monetarios (valor_monetario_nombre,valor_monetario_descripcion) values ('Tiempos y Horarios','Corresponde al tipo de valores para tiempo en horas, dias, minutos, etc');
-
+insert into tipo_valores_monetarios (tipo_valor_monetario_nombre,tipo_valor_monetario_descripcion) values ('Tiempos y Horarios','Corresponde al tipo de valores para tiempo en horas, dias, minutos, etc');
 
 -- VALORES MONETARIOS
 
