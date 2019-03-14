@@ -651,14 +651,13 @@ insert into estados (estado_nombre,estado_descripcion) values ('inactivo','');
 
 -- SUBVENCIONES
 
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('Código sin ingresar','Fondo de Apoyo a la Educación Pública (FAEP), en sus convenios 2016, 2017 y 2018, en lo relativo a la ejecución de gastos 2018.','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('Código sin ingresar','Subvención General.','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('Código sin ingresar','Subvención Escolar Preferencial (SEP).','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('Código sin ingresar','Incremento de Subvención por Proyectos de Integración Escolar (PIE).','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('Código sin ingresar','Subvención Pro retención.','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('Código sin ingresar','Subvención de Internado.','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('Código sin ingresar','Subvención de Refuerzo Educativo','Sin descripción');
-
+insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('FAEP','Fondo de Apoyo a la Educación Pública (FAEP)','En sus convenios 2016, 2017 y 2018, en lo relativo a la ejecución de gastos 2018');
+insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SG','Subvención General (SG)','Sin descripción');
+insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SEP','Subvención Escolar Preferencial (SEP)','Sin descripción');
+insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('PIE','Incremento de Subvención por Proyectos de Integración Escolar (PIE)','Sin descripción');
+insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SPR','Subvención Pro Retención (SPR)','Sin descripción');
+insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SI','Subvención de Internado (SI)','Sin descripción');
+insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SER','Subvención de Refuerzo Educativo (SER)','Sin descripción');
 
 -- TIPO CARGOS
 
@@ -682,15 +681,30 @@ insert into cargos (tipo_cargo_id,cargo_codigo,cargo_nombre) values (2,'TEC','T�
 
 -- TIPO CONTRATOS
 
-insert into tipo_contratos (tipo_cargo_nombre,tipo_cargo_descripcion) values ('Plazo Fijo','');
-insert into tipo_contratos (tipo_cargo_nombre,tipo_cargo_descripcion) values ('Indefinido','');
+insert into tipo_contratos (tipo_contrato_nombre,tipo_contrato_descripcion,tipo_contrato_codigo) values ('Contrato Plazo Fijo','Sin Descripción','CPF');
+insert into libros (tipo_contrato_nombre,tipo_contrato_descripcion,tipo_contrato_codigo) values ('Contrato Indefinido','Sin Descripción','CI');
+
+
+
+-- CONTRATOS -- PENDIENTE , SE DEBERIA ARMAR SOLO, UNA VEZ QUE SE CREA LA FICHA TRABAJADOR
+
+
+-- RBDS 
+
+insert into tipo_subvenciones (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Administración central','Sin Descripción','AC');
+insert into tipo_subvenciones (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba otro Rbd','Sin Descripción','123456');
+insert into tipo_subvenciones (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba 2 otro Rbd','Sin Descripción','654321');
 
 
 
 
+-- ESTABLECIMIENTOS
 
--- CONTRATOS -- PENDIENTE
-
+insert into establecimientos (establecimiento_nombre,establecimiento_direccion,establecimiento_descripcion) values ('Establecimiento 1','Direccion 1','Descripción 1');
+insert into establecimientos (establecimiento_nombre,establecimiento_direccion,establecimiento_descripcion) values ('Establecimiento 2','Direccion 2','Descripción 2');
+insert into establecimientos (establecimiento_nombre,establecimiento_direccion,establecimiento_descripcion) values ('Establecimiento 3','Direccion 3','Descripción 3');
+insert into establecimientos (establecimiento_nombre,establecimiento_direccion,establecimiento_descripcion) values ('Establecimiento 4','Direccion 4','Descripción 4');
+insert into establecimientos (establecimiento_nombre,establecimiento_direccion,establecimiento_descripcion) values ('Establecimiento 5','Direccion 5','Descripción 5');
 
 
 
@@ -715,6 +729,8 @@ insert into libros (libro_nombre,libro_descripcion,libro_codigo) values ('Libro 
 insert into libros (libro_nombre,libro_descripcion,libro_codigo) values ('Libro de Honorarios','Sin descripción','Código sin ingresar');
 insert into libros (libro_nombre,libro_descripcion,libro_codigo) values ('Libro de Remuneraciones','Sin descripción','Código sin ingresar');
 insert into libros (libro_nombre,libro_descripcion,libro_codigo) values ('Libro de Otros Ingresos','Sin descripción','Código sin ingresar');
+
+
 
 
 

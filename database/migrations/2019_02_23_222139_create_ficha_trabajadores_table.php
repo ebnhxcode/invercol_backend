@@ -39,8 +39,6 @@ class CreateFichaTrabajadoresTable extends Migration
             $table->integer('eliminado_por_usuario_id')->nullable();
             #
 
-            $table->integer('establecimiento_id')->nullable();
-
             $table->timestamps();
         });
     }
