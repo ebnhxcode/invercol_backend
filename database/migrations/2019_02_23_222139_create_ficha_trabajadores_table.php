@@ -12,24 +12,17 @@ class CreateFichaTrabajadoresTable extends Migration
         Schema::create('ficha_trabajadores', function (Blueprint $table) {
             $table->increments('ficha_trabajador_id');
 
-            $table->string('ficha_rut', 10)->nullable();
-            $table->string('ficha_dv', 1)->nullable();
-
-            $table->string('ficha_genero', 255)->nullable();
-            $table->string('ficha_nombre', 255)->nullable();
-            $table->string('ficha_apellido_paterno', 255)->nullable();
-            $table->string('ficha_apellido_materno', 255)->nullable();
-
-            $table->integer('establecimiento_id')->nullable();
-            $table->integer('cargo_id')->nullable();
+            $table->date('ficha_fecha_ingreso')->nullable();
+            
             $table->integer('sueldo_base')->nullable();
             $table->integer('horas_semanales')->nullable();
             $table->integer('horas_extras')->nullable();
             $table->integer('bono')->nullable();
             
-            $table->date('ficha_fecha_nacimiento')->nullable();
-            $table->date('ficha_fecha_ingreso')->nullable();
-            
+            $table->integer('trabajador_id')->nullable();
+            $table->integer('establecimiento_id')->nullable();
+            $table->integer('tipo_contrato_id')->nullable();
+            $table->integer('subvencion_id')->nullable();
 
             /**
              * Campos de seguimiento

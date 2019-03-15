@@ -14,7 +14,6 @@ class CreateContratosTable extends Migration
 
             $table->integer('ficha_trabajador_id')->nullable();
             $table->integer('tipo_contrato_id')->nullable();
-            $table->integer('cargo_id')->nullable();
             
             $table->date('contrato_fecha_inicio')->nullable();
             $table->string('contrato_horas_semanal', 20)->nullable();

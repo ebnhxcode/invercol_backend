@@ -9,7 +9,9 @@ class TipoValorMonetario extends Model
     protected $table = "tipo_valores_monetarios";
     protected $primaryKey = "tipo_valor_monetario_id";
     protected $fillable = [
+      'tipo_valor_monetario_codigo',
       'tipo_valor_monetario_nombre',
+      'tipo_valor_monetario_descripcion',
   
       'creado_por_usuario_id',
       'modificado_por_usuario_id',

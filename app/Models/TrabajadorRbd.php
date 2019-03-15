@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoCargo extends Model {
-  protected $table = "tipo_cargos";
-  protected $primaryKey = "tipo_cargo_id";
+class TrabajadorRbd extends Model
+{
+  protected $table = "trabajadores_rbds";
+  protected $primaryKey = "trabajador_rbd_id";
   protected $fillable = [
-    'tipo_cargo_codigo',
-    'tipo_cargo_nombre',
-    'tipo_cargo_descripcion',
+    'trabajador_id',
+    'rbd_id',
+
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',
@@ -23,10 +24,14 @@ class TipoCargo extends Model {
 
   # Belongs to
 
-  # Has Many
-  public function cargos () {
-    return $this->hasMany(\App\Models\Cargo::class, 'tipo_cargo_id');
-  } 
+
+  public function rbd () {
+    return $this->belongsTo(\App\Models\Rbd::class, 'rbd_id');
+  }
+
+  public function trabajador () {
+    return $this->belongsTo(\App\Models\Trabajador::class, 'trabajador_id');
+  }
 
   public function usuario_creador () {
     return $this->belongsTo(\App\Models\Usuario::class, 'creado_por_usuario_id');
@@ -40,6 +45,9 @@ class TipoCargo extends Model {
     return $this->belongsTo(\App\Models\Usuario::class, 'eliminado_por_usuario_id');
   }
 
-  # Has One
+  # Has Many
 
+
+
+  # Has One
 }

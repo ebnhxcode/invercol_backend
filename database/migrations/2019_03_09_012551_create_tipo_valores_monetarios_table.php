@@ -11,6 +11,7 @@ class CreateTipoValoresMonetariosTable extends Migration
     {
         Schema::create('tipo_valores_monetarios', function (Blueprint $table) {
             $table->increments('tipo_valor_monetario_id');
+            $table->string('tipo_valor_monetario_codigo', 255)->nullable();
             $table->string('tipo_valor_monetario_nombre', 255)->nullable();
             $table->string('tipo_valor_monetario_descripcion', 5000)->nullable();
 

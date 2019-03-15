@@ -15,7 +15,6 @@ class Contrato extends Model
 
     'ficha_trabajador_id',
     'tipo_contrato_id',
-    'cargo_id',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',

@@ -48,6 +48,11 @@ Route::resource('/frontend/tipos_funciones', 'TipoFuncionController');
 Route::resource('/frontend/tipos_valores_monetarios', 'TipoValorMonetarioController');
 Route::resource('/frontend/usuarios', 'UsuarioController');
 Route::resource('/frontend/valores_monetarios', 'ValorMonetarioController');
+Route::resource('/frontend/rbds', 'RbdController');
+Route::resource('/frontend/establecimientos_rbds', 'EstablecimientoRbdController');
+Route::resource('/frontend/trabajadores_rbds', 'TrabajadorRbdController');
+Route::resource('/frontend/trabajadores', 'TrabajadorController');
+Route::resource('/frontend/cargos_funciones', 'CargoFuncionController');
 
 
 

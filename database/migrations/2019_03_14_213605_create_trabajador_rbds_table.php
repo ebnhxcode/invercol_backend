@@ -4,18 +4,16 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoCargosTable extends Migration
+class CreateTrabajadorRbdsTable extends Migration
 {
 
     public function up()
     {
-        Schema::create('tipo_cargos', function (Blueprint $table) {
-            $table->increments('tipo_cargo_id');
+        Schema::create('trabajador_rbds', function (Blueprint $table) {
+            $table->increments('trabajador_rbd_id');
 
-            $table->string('tipo_cargo_codigo', 255)->nullable();
-            $table->string('tipo_cargo_nombre', 255)->nullable();
-            $table->string('tipo_cargo_descripcion', 5000)->nullable();
-
+            $table->integer('trabajador_id')->nullable();
+            $table->integer('rbd_id')->nullable();
 
             /**
              * Campos de seguimiento
@@ -25,7 +23,6 @@ class CreateTipoCargosTable extends Migration
             $table->integer('eliminado_por_usuario_id')->nullable();
             #
 
-
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateTipoCargosTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('tipo_cargos');
+        Schema::dropIfExists('trabajador_rbds');
     }
 }

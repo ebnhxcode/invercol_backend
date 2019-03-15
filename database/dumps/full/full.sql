@@ -690,9 +690,9 @@ insert into tipo_contratos (tipo_contrato_nombre,tipo_contrato_descripcion,tipo_
 
 -- RBDS 
 
-insert into tipo_subvenciones (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Administración central','Sin Descripción','AC');
-insert into tipo_subvenciones (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba otro Rbd','Sin Descripción','123456');
-insert into tipo_subvenciones (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba 2 otro Rbd','Sin Descripción','654321');
+insert into rbd (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Administración central','Sin Descripción','AC');
+insert into rbd (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba otro Rbd','Sin Descripción','123456');
+insert into rbd (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba 2 otro Rbd','Sin Descripción','654321');
 
 
 

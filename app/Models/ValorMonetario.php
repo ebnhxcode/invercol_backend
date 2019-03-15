@@ -9,7 +9,9 @@ class ValorMonetario extends Model
     protected $table = "valores_monetarios";
     protected $primaryKey = "valor_monetario_id";
     protected $fillable = [
+      'valor_monetario_codigo',
       'valor_monetario_nombre',
+      'valor_monetario_descripcion',
   
   
       'tipo_valor_monetario_id',

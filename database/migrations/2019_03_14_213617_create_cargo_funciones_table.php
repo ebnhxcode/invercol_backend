@@ -4,17 +4,16 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoCargosTable extends Migration
+class CreateCargoFuncionesTable extends Migration
 {
 
     public function up()
     {
-        Schema::create('tipo_cargos', function (Blueprint $table) {
-            $table->increments('tipo_cargo_id');
+        Schema::create('cargo_funciones', function (Blueprint $table) {
+            $table->increments('cargo_funcion_id');
 
-            $table->string('tipo_cargo_codigo', 255)->nullable();
-            $table->string('tipo_cargo_nombre', 255)->nullable();
-            $table->string('tipo_cargo_descripcion', 5000)->nullable();
+            $table->integer('cargo_id')->nullable();
+            $table->integer('funcion_id')->nullable();
 
 
             /**
@@ -25,14 +24,12 @@ class CreateTipoCargosTable extends Migration
             $table->integer('eliminado_por_usuario_id')->nullable();
             #
 
-
             $table->timestamps();
         });
     }
 
-
     public function down()
     {
-        Schema::dropIfExists('tipo_cargos');
+        Schema::dropIfExists('cargo_funciones');
     }
 }
