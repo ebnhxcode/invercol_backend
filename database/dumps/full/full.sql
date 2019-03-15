@@ -688,6 +688,22 @@ insert into tipo_contratos (tipo_contrato_nombre,tipo_contrato_descripcion,tipo_
 -- CONTRATOS -- PENDIENTE , SE DEBERIA ARMAR SOLO, UNA VEZ QUE SE CREA LA FICHA TRABAJADOR
 
 
+-- DOCUMENTOS
+
+
+
+-- TIPO DOCUMENTOS
+
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('BOL','Boleta');
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('BOLE','Boleta Exenta');
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('FAC','Factura');
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('FACE','Factura Exenta');
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('ODE','Otro Documento Exento');
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('BOLEC','Boleta Electrónica');
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('BOLEX','Boleta Exenta Electrónica');
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('FACEL','Factura Electrónica');
+insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values ('FACEX','Factura Exenta Electrónica');
+
 -- RBDS 
 
 insert into rbd (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Administración central','Sin Descripción','AC');

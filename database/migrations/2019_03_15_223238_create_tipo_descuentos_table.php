@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoDocumentosTable extends Migration
+class CreateTipoDescuentosTable extends Migration
 {
 
     public function up()
     {
-        Schema::create('tipo_documentos', function (Blueprint $table) {
-            $table->increments('tipo_documento_id');
-            
-            $table->string('tipo_documento_codigo', 255)->nullable();
-            $table->string('tipo_documento_nombre', 255)->nullable();
-            
+        Schema::create('tipo_descuentos', function (Blueprint $table) {
+            $table->increments('tipo_descuento_id');
+
+            $table->string('tipo_descuento_codigo')->nullable();
+            $table->string('tipo_descuento_nombre')->nullable();
+
             /**
              * Campos de seguimiento
              */
@@ -22,14 +22,15 @@ class CreateTipoDocumentosTable extends Migration
             $table->integer('modificado_por_usuario_id')->nullable();
             $table->integer('eliminado_por_usuario_id')->nullable();
             #
-            
+
+
+
             $table->timestamps();
         });
     }
 
-
     public function down()
     {
-        Schema::dropIfExists('tipo_documentos');
+        Schema::dropIfExists('tipo_descuentos');
     }
 }

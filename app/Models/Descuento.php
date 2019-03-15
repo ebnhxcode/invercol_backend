@@ -4,14 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoDocumento extends Model
+class Descuento extends Model
 {
-  protected $table = "tipo_documentos";
-  protected $primaryKey = "tipo_documento_id";
+  protected $table = "descuentos";
+  protected $primaryKey = "descuento_id";
   protected $fillable = [
+
     
-    'tipo_documento_codigo',
-    'tipo_documento_nombre',
+    'descuento_comentario',
+    'descuento_fecha_ingreso',
+    'descuento_monto',
+
+    'tipo_descuento_id',
+
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',
@@ -23,6 +28,11 @@ class TipoDocumento extends Model
 
 
   # Belongs to
+
+
+  public function tipo_descuento () {
+    return $this->belongsTo(\App\Models\TipoDescuento::class, 'tipo_descuento_id');
+  }
 
   public function usuario_creador () {
     return $this->belongsTo(\App\Models\Usuario::class, 'creado_por_usuario_id');
@@ -37,9 +47,7 @@ class TipoDocumento extends Model
   }
 
   # Has Many
-  public function libros_tipo_documentos () {
-    return $this->hasMany(\App\Models\LibroTipoDocumento::class, 'tipo_documento_id');
-  }
+
 
 
   # Has One
