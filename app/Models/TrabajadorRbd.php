@@ -9,7 +9,8 @@ class TrabajadorRbd extends Model
   protected $table = "trabajadores_rbds";
   protected $primaryKey = "trabajador_rbd_id";
   protected $fillable = [
-    'trabajador_id',
+
+    'ficha_trabajador_id',
     'rbd_id',
 
 
@@ -29,8 +30,8 @@ class TrabajadorRbd extends Model
     return $this->belongsTo(\App\Models\Rbd::class, 'rbd_id');
   }
 
-  public function trabajador () {
-    return $this->belongsTo(\App\Models\Trabajador::class, 'trabajador_id');
+  public function ficha_trabajador () {
+    return $this->belongsTo(\App\Models\FichaTrabajador::class, 'ficha_trabajador_id');
   }
 
   public function usuario_creador () {

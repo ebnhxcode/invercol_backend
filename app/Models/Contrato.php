@@ -9,9 +9,12 @@ class Contrato extends Model
   protected $table = "contratos";
   protected $primaryKey = "contrato_id";
   protected $fillable = [
+
     'contrato_fecha_inicio',
-    'contrato_horas_semanal',
+
+    'contrato_horas_semanales',
     'contrato_sueldo_base',
+    'contrato_valor_hora',
 
     'ficha_trabajador_id',
     'tipo_contrato_id',

@@ -14,7 +14,6 @@ class CreateSubvencionesTable extends Migration
           
           $table->string('subvencion_codigo', 255)->nullable();
           $table->string('subvencion_nombre', 255)->nullable();
-          $table->string('subvencion_descripcion', 5000)->nullable();
           
 
           /**

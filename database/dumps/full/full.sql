@@ -650,13 +650,13 @@ insert into estados (estado_nombre,estado_descripcion) values ('inactivo','');
 
 -- SUBVENCIONES
 
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('FAEP','Fondo de Apoyo a la Educación Pública (FAEP)','En sus convenios 2016, 2017 y 2018, en lo relativo a la ejecución de gastos 2018');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SG','Subvención General (SG)','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SEP','Subvención Escolar Preferencial (SEP)','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('PIE','Incremento de Subvención por Proyectos de Integración Escolar (PIE)','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SPR','Subvención Pro Retención (SPR)','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SI','Subvención de Internado (SI)','Sin descripción');
-insert into subvenciones (subvencion_codigo,subvencion_nombre,subvencion_descripcion) values ('SER','Subvención de Refuerzo Educativo (SER)','Sin descripción');
+insert into subvenciones (subvencion_codigo,subvencion_nombre) values ('FAEP','Fondo de Apoyo a la Educación Pública (FAEP)');
+insert into subvenciones (subvencion_codigo,subvencion_nombre) values ('SG','Subvención General (SG)');
+insert into subvenciones (subvencion_codigo,subvencion_nombre) values ('SEP','Subvención Escolar Preferencial (SEP)');
+insert into subvenciones (subvencion_codigo,subvencion_nombre) values ('PIE','Incremento de Subvención por Proyectos de Integración Escolar (PIE)');
+insert into subvenciones (subvencion_codigo,subvencion_nombre) values ('SPR','Subvención Pro Retención (SPR)');
+insert into subvenciones (subvencion_codigo,subvencion_nombre) values ('SI','Subvención de Internado (SI)');
+insert into subvenciones (subvencion_codigo,subvencion_nombre) values ('SER','Subvención de Refuerzo Educativo (SER)');
 
 -- TIPO CARGOS
 

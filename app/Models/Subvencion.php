@@ -11,7 +11,6 @@ class Subvencion extends Model
   protected $fillable = [
     'subvencion_codigo',
     'subvencion_nombre',
-    'subvencion_descripcion',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',

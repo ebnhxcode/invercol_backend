@@ -10,17 +10,27 @@ class FichaTrabajador extends Model
   protected $primaryKey = "ficha_trabajador_id";
   protected $fillable = [
 
+    'ficha_rut',
+    'ficha_dv',
+
+    'ficha_genero',
+
+    'ficha_nombre',
+    'ficha_apellido_paterno',
+    'ficha_apellido_materno',
+    'ficha_fecha_nacimiento',
+
     'ficha_fecha_ingreso',
     
-    'sueldo_base',
-    'horas_semanales',
-    'horas_extras',
-    'bono',
+    'ficha_sueldo_base',
+    'ficha_horas_semanales',
+    'ficha_horas_extras',
+    'ficha_bono',
 
-    'trabajador_id',
     'establecimiento_id',
-    'tipo_contrato_id',
     'subvencion_id',
+    'cargo_id',
+    'rbd_id',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',
@@ -39,10 +49,6 @@ class FichaTrabajador extends Model
 
   public function establecimiento () {
     return $this->belongsTo(\App\Models\Establecimiento::class, 'establecimiento_id');
-  }
-
-  public function tipo_contrato () {
-    return $this->belongsTo(\App\Models\TipoContrato::class, 'tipo_contrato_id');
   }
 
   public function subvencion () {

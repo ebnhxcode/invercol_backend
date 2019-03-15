@@ -12,12 +12,14 @@ class CreateContratosTable extends Migration
         Schema::create('contratos', function (Blueprint $table) {
             $table->increments('contrato_id');
 
+            $table->date('contrato_fecha_inicio')->nullable();
+
+            $table->string('contrato_horas_semanales', 20)->nullable();
+            $table->string('contrato_sueldo_base', 20)->nullable();
+            $table->string('contrato_valor_hora', 20)->nullable();
+
             $table->integer('ficha_trabajador_id')->nullable();
             $table->integer('tipo_contrato_id')->nullable();
-            
-            $table->date('contrato_fecha_inicio')->nullable();
-            $table->string('contrato_horas_semanal', 20)->nullable();
-            $table->string('contrato_sueldo_base', 20)->nullable();
 
             /**
              * Campos de seguimiento
