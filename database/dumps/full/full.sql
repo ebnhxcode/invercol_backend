@@ -706,9 +706,9 @@ insert into tipo_documentos (tipo_documento_codigo,tipo_documento_nombre) values
 
 -- RBDS 
 
-insert into rbd (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Administración central','Sin Descripción','AC');
-insert into rbd (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba otro Rbd','Sin Descripción','123456');
-insert into rbd (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba 2 otro Rbd','Sin Descripción','654321');
+insert into rbds (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Administración central','Sin Descripción','AC');
+insert into rbds (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba otro Rbd','Sin Descripción','123456');
+insert into rbds (rbd_nombre,rbd_descripcion,rbd_codigo) values ('Prueba 2 otro Rbd','Sin Descripción','654321');
 
 
 
