@@ -12,7 +12,6 @@ class CreateEstablecimientosTable extends Migration
         Schema::create('establecimientos', function (Blueprint $table) {
             $table->increments('establecimiento_id');
 
-            $table->string('establecimiento_rbd', 255)->nullable();
             $table->string('establecimiento_nombre', 255)->nullable();
             $table->string('establecimiento_direccion', 255)->nullable();
             $table->string('establecimiento_descripcion', 5000)->nullable();
