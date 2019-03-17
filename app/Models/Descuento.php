@@ -26,7 +26,6 @@ class Descuento extends Model
   ];
 
 
-
   # Belongs to
 
 

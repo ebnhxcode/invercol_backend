@@ -27,7 +27,6 @@ class Contrato extends Model
   ];
 
 
-
   # Belongs to
 
 
@@ -39,9 +38,7 @@ class Contrato extends Model
     return $this->belongsTo(\App\Models\TipoContrato::class, 'tipo_contrato_id');
   }
 
-  public function cargo () {
-    return $this->belongsTo(\App\Models\Cargo::class, 'cargo_id');
-  }
+
 
 
   public function usuario_creador () {

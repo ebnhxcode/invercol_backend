@@ -9,7 +9,6 @@ class Establecimiento extends Model
   protected $table = "establecimientos";
   protected $primaryKey = "establecimiento_id";
   protected $fillable = [
-    'establecimiento_rbd',
     'establecimiento_nombre',
     'establecimiento_direccion',
     'establecimiento_descripcion',
@@ -50,10 +49,6 @@ class Establecimiento extends Model
   }
 
   # Has Many
-
-  public function fichas_trabajadores () {
-    return $this->hasMany(\App\Models\FichaTrabajador::class, 'establecimiento_id');
-  } 
 
 
 

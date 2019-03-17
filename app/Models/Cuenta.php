@@ -26,7 +26,6 @@ class Cuenta extends Model
   ];
 
 
-
   # Belongs to
 
   public function cuenta_dependencia () {

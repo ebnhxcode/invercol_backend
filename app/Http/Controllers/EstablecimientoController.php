@@ -7,10 +7,33 @@ use \App\Models\Establecimiento;
 
 class EstablecimientoController extends Controller
 {
-  public function index()
+
+  private $per_page;
+
+  public function validatePagination ($request) {
+    if (!$request->per_page) {
+        $this->per_page = 10;
+    } else {
+        $this->per_page = $request->per_page;
+    }
+  }
+
+  public function index(Request $request)
   {
-    $this->establecimientos = Establecimiento::with(['region', 'comuna'])->get(); 
-    return $this->establecimientos;
+    $this->validatePagination($request);
+
+    $this->establecimientos = Establecimiento::with(['region', 'comuna']); 
+
+    if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
+            
+      return response()->json([
+        'status'=>200,
+        'msg'=>'ok',
+        'establecimientos'=>$this->establecimientos->paginate((int)$this->per_page),
+      ]);
+    }
+
+    return $this->establecimientos->get();
   }
 
   public function create()

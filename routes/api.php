@@ -16,3 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/establecimientos', 'Api\ResourcesController@establecimientos');
+Route::get('/cuentas', 'Api\ResourcesController@cuentas');
+Route::get('/libros', 'Api\ResourcesController@libros');
+Route::get('/regiones', 'Api\ResourcesController@regiones');
+Route::get('/comunas', 'Api\ResourcesController@comunas');
+Route::get('/tipo_contratos', 'Api\ResourcesController@tipoContratos');
+Route::get('/ficha_trabajadores', 'Api\ResourcesController@fichaTrabajadores');
+Route::get('/cuenta_dependencias', 'Api\ResourcesController@cuentaDependencias');
+
+

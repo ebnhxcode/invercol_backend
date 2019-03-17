@@ -22,7 +22,6 @@ class Libro extends Model
   ];
 
 
-
   # Belongs to
 
   public function usuario_creador () {

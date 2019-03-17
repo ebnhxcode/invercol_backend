@@ -43,9 +43,6 @@ class FichaTrabajador extends Model
 
   # Belongs to
 
-  public function trabajador () {
-    return $this->belongsTo(\App\Models\Trabajador::class, 'trabajador_id');
-  }
 
   public function establecimiento () {
     return $this->belongsTo(\App\Models\Establecimiento::class, 'establecimiento_id');
@@ -55,6 +52,16 @@ class FichaTrabajador extends Model
     return $this->belongsTo(\App\Models\Subvencion::class, 'subvencion_id');
   }
 
+  public function cargo () {
+    return $this->belongsTo(\App\Models\Cargo::class, 'cargo_id');
+  }
+
+  public function rbd () {
+    return $this->belongsTo(\App\Models\Rbd::class, 'rbd_id');
+  }
+
+
+  
   public function usuario_creador () {
     return $this->belongsTo(\App\Models\Usuario::class, 'creado_por_usuario_id');
   }

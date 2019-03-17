@@ -3,13 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Rbd;
 
 class RbdController extends Controller
 {
-  public function index()
+
+  private $per_page;
+
+  public function validatePagination ($request) {
+    if (!$request->per_page) {
+        $this->per_page = 10;
+    } else {
+        $this->per_page = $request->per_page;
+    }
+  }
+
+  public function index(Request $request)
   {
-    $this->rbds = Rbd::all(); 
-    return $this->rbds;
+    $this->rbds = Rbd::with(['establecimiento']); 
+
+    if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
+            
+      return response()->json([
+        'status'=>200,
+        'msg'=>'ok',
+        'rbds'=>$this->rbds->paginate((int)$this->per_page),
+      ]);
+    }
+
+    return $this->rbds->get();
+
   }
 
   public function create()

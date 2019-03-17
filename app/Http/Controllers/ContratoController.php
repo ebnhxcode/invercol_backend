@@ -7,9 +7,32 @@ use \App\Models\Contrato;
 
 class ContratoController extends Controller
 {
-  public function index()
+
+  private $per_page;
+
+  public function validatePagination ($request) {
+    if (!$request->per_page) {
+        $this->per_page = 10;
+    } else {
+        $this->per_page = $request->per_page;
+    }
+  }
+
+  public function index(Request $request)
   {
-    $this->contratos = Contrato::all(); 
+    $this->validatePagination($request);
+
+    $this->contratos = Contrato::with(['tipo_contrato','ficha_trabajador']); 
+
+    if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
+            
+      return response()->json([
+        'status'=>200,
+        'msg'=>'ok',
+        'contratos'=>$this->contratos->paginate((int)$this->per_page),
+      ]);
+    }
+
     return $this->contratos;
   }
 
