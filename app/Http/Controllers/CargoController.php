@@ -8,9 +8,33 @@ use \App\Models\Cargo;
 class CargoController extends Controller
 {
 
-  public function index()
+  private $per_page;
+
+  public function validatePagination ($request) {
+    if (!$request->per_page) {
+        $this->per_page = 10;
+    } else {
+        $this->per_page = $request->per_page;
+    }
+  }
+
+
+  public function index(Request $request)
   {
-    $this->cargos = Cargo::all(); 
+    $this->validatePagination($request);
+
+    $this->cargos = Cargo::with(['tipo_cargo', 'funciones']);
+
+    if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
+            
+      return response()->json([
+        'status'=>200,
+        'msg'=>'ok',
+        'cargos'=>$this->cargos->paginate((int)$this->per_page),
+      ]);
+    }
+
+
     return $this->cargos;
   }
 
