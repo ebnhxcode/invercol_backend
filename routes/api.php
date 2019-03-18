@@ -26,6 +26,8 @@ Route::get('/tipo_contratos', 'Api\ResourcesController@tipoContratos');
 Route::get('/ficha_trabajadores', 'Api\ResourcesController@fichaTrabajadores');
 Route::get('/cuenta_dependencias', 'Api\ResourcesController@cuentaDependencias');
 Route::get('/cargos', 'Api\ResourcesController@cargos');
+Route::get('/funciones', 'Api\ResourcesController@funciones');
 Route::get('/tipo_funciones', 'Api\ResourcesController@tipoFunciones');
+Route::get('/tipo_cargos', 'Api\ResourcesController@tipoCargos');
 
 

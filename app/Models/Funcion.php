@@ -15,7 +15,6 @@ class Funcion extends Model
 
 
     'tipo_funcion_id',
-    'cargo_id',
 
     'creado_por_usuario_id',
     'modificado_por_usuario_id',
@@ -28,9 +27,6 @@ class Funcion extends Model
 
   # Belongs to
 
-  public function cargo () {
-    return $this->belongsTo(\App\Models\Cargo::class, 'cargo_id');
-  }
 
   public function tipo_funcion () {
     return $this->belongsTo(\App\Models\TipoFuncion::class, 'tipo_funcion_id');
@@ -50,7 +46,9 @@ class Funcion extends Model
 
 
   # Has Many
-
+  public function cargo_funciones () {
+    return $this->hasMany(\App\Models\CargoFuncion::class, 'funcion_id');
+  }
 
   
 

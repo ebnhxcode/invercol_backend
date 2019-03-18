@@ -23,7 +23,7 @@ class FuncionController extends Controller
 
     $this->validatePagination($request);
 
-    $this->funciones = Funcion::with(['cargo', 'tipo_funcion']);
+    $this->funciones = Funcion::with(['tipo_funcion', 'cargo_funciones.cargo']);
 
 
     if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {

@@ -44,9 +44,9 @@ class Cargo extends Model {
 
   # Has Many
 
-  public function funciones () {
-    return $this->hasMany(\App\Models\Funcion::class, 'cargo_id');
-  } 
+  public function cargo_funciones () {
+    return $this->hasMany(\App\Models\CargoFuncion::class, 'cargo_id');
+  }
 
   public function contratos () {
     return $this->hasMany(\App\Models\Contrato::class, 'cargo_id');

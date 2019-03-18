@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\CargoFuncion;
 
 class CargoFuncionController extends Controller
 {
@@ -19,8 +20,20 @@ class CargoFuncionController extends Controller
 
   public function store(Request $request)
   {
-    $this->cargo_funcion = CargoFuncion::create($request->all());
-    return $this->cargo_funcion;
+
+    $cargo_funcion_existe = CargoFuncion::where('cargo_id', $request->cargo_id)
+      ->where('funcion_id', $request->funcion_id)
+      ->first();
+    
+      if (count($cargo_funcion_existe) == 0) {
+        $this->cargo_funcion = CargoFuncion::create($request->all());
+        return $this->cargo_funcion;
+      }
+      
+      return response()->json([
+        'status' => 401,
+        'message' => ''
+      ]);
   }
 
   public function show($id)

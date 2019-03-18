@@ -12,10 +12,14 @@ class Contrato extends Model
 
     'contrato_fecha_inicio',
 
-    'contrato_horas_semanales',
     'contrato_sueldo_base',
+    'contrato_horas_semanales',
+    'contrato_horas_extras',
+    'contrato_bono',
     'contrato_valor_hora',
 
+    'rbd_id',
+    'subvencion_id',
     'ficha_trabajador_id',
     'tipo_contrato_id',
 
@@ -29,6 +33,13 @@ class Contrato extends Model
 
   # Belongs to
 
+  public function rbd () {
+    return $this->belongsTo(\App\Models\Rbd::class, 'rbd_id');
+  }
+
+  public function subvencion () {
+    return $this->belongsTo(\App\Models\Subvencion::class, 'subvencion_id');
+  }
 
   public function ficha_trabajador () {
     return $this->belongsTo(\App\Models\FichaTrabajador::class, 'ficha_trabajador_id');

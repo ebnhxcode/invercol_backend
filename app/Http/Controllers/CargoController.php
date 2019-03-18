@@ -23,7 +23,7 @@ class CargoController extends Controller
   {
     $this->validatePagination($request);
 
-    $this->cargos = Cargo::with(['tipo_cargo', 'funciones']);
+    $this->cargos = Cargo::with(['tipo_cargo', 'cargo_funciones.funcion']);
 
     if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
             

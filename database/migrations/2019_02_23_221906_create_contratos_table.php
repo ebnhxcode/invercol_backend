@@ -14,10 +14,14 @@ class CreateContratosTable extends Migration
 
             $table->date('contrato_fecha_inicio')->nullable();
 
-            $table->string('contrato_horas_semanales', 20)->nullable();
             $table->string('contrato_sueldo_base', 20)->nullable();
+            $table->string('contrato_horas_semanales', 20)->nullable();
+            $table->string('contrato_horas_extras', 20)->nullable();
+            $table->string('contrato_bono', 20)->nullable();
             $table->string('contrato_valor_hora', 20)->nullable();
 
+            $table->integer('rbd_id')->nullable();
+            $table->integer('subvencion_id')->nullable();
             $table->integer('ficha_trabajador_id')->nullable();
             $table->integer('tipo_contrato_id')->nullable();
 

@@ -22,13 +22,6 @@ class FichaTrabajador extends Model
 
     'ficha_fecha_ingreso',
     
-    'ficha_sueldo_base',
-    'ficha_horas_semanales',
-    'ficha_horas_extras',
-    'ficha_bono',
-
-    'establecimiento_id',
-    'subvencion_id',
     'cargo_id',
     'rbd_id',
 

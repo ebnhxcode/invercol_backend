@@ -7,10 +7,31 @@ use \App\Models\Subvencion;
 
 class SubvencionController extends Controller
 {
-  public function index()
+
+  private $per_page;
+
+  public function validatePagination ($request) {
+    if (!$request->per_page) {
+        $this->per_page = 10;
+    } else {
+        $this->per_page = $request->per_page;
+    }
+  }
+
+  public function index(Request $request)
   {
-    $this->subvenciones = Subvencion::all(); 
-    return $this->subvenciones;
+    $this->subvenciones = new Subvencion(); 
+
+    if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
+            
+      return response()->json([
+        'status'=>200,
+        'msg'=>'ok',
+        'subvenciones'=>$this->subvenciones->paginate((int)$this->per_page),
+      ]);
+    }
+
+    return $this->subvenciones->get();
   }
 
   public function create()

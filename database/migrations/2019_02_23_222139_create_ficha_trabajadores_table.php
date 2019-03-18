@@ -22,15 +22,6 @@ class CreateFichaTrabajadoresTable extends Migration
             $table->string('ficha_apellido_materno')->nullable();
             $table->string('ficha_fecha_nacimiento')->nullable();
             
-            $table->date('ficha_fecha_ingreso')->nullable();
-            
-            $table->integer('ficha_sueldo_base')->nullable();
-            $table->integer('ficha_horas_semanales')->nullable();
-            $table->integer('ficha_horas_extras')->nullable();
-            $table->integer('ficha_bono')->nullable();
-            
-            $table->integer('establecimiento_id')->nullable();
-            $table->integer('subvencion_id')->nullable();
             $table->integer('cargo_id')->nullable();
             $table->integer('rbd_id')->nullable();
 
