@@ -675,7 +675,10 @@ insert into cargos (tipo_cargo_id,cargo_codigo,cargo_nombre) values (2,'DIR','Di
 insert into cargos (tipo_cargo_id,cargo_codigo,cargo_nombre) values (2,'PRO','Profesional');
 insert into cargos (tipo_cargo_id,cargo_codigo,cargo_nombre) values (2,'TEC','Técnico-Administrativo');
 
+-- TIPO FUNCIONES
 
+insert into tipo_funciones (tipo_funcion_nombre,tipo_funcion_descripcion,tipo_funcion_codigo) values ('tipo 1','tipo 1','');
+insert into tipo_funciones (tipo_funcion_nombre,tipo_funcion_descripcion,tipo_funcion_codigo) values ('tipo 2','tipo 2','');
 
 
 -- TIPO CONTRATOS

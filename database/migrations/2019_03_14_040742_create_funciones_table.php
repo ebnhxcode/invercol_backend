@@ -18,6 +18,7 @@ class CreateFuncionesTable extends Migration
             $table->string('funcion_descripcion', 5000)->nullable();
 
             $table->integer('tipo_funcion_id')->nullable();
+            $table->integer('cargo_id')->nullable();
 
             /**
              * Campos de seguimiento

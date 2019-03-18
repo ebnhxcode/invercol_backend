@@ -10,7 +10,7 @@ class CreateTipoFuncionesTable extends Migration
     public function up()
     {
         Schema::create('tipo_funciones', function (Blueprint $table) {
-            $table->increments('tipo_funciones_id');
+            $table->increments('tipo_funcion_id');
 
             $table->string('tipo_funcion_codigo', 255)->nullable();
             $table->string('tipo_funcion_nombre', 255)->nullable();

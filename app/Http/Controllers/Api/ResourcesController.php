@@ -12,6 +12,8 @@ use \App\Models\Comuna;
 use \App\Models\TipoContrato;
 use \App\Models\FichaTrabajador;
 use \App\Models\CuentaDependencia;
+use \App\Models\Cargo;
+use \App\Models\TipoFuncion;
 
 
 
@@ -64,6 +66,18 @@ class ResourcesController extends Controller {
   {
     $this->cuenta_dependencias = CuentaDependencia::all();  
     return $this->cuenta_dependencias;
+  }
+
+  public function cargos ()
+  {
+    $this->cargos = Cargo::all();  
+    return $this->cargos;
+  }
+
+  public function tipoFunciones ()
+  {
+    $this->tipo_funciones = TipoFuncion::all();
+    return $this->tipo_funciones;
   }
 
 }
