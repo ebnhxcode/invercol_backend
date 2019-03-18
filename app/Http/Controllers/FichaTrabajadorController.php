@@ -23,7 +23,7 @@ class FichaTrabajadorController extends Controller
   {
     $this->validatePagination($request);
 
-    $this->ficha_trabajadores = FichaTrabajador::with(['cargo','rbd']); 
+    $this->ficha_trabajadores = FichaTrabajador::with(['contratos.rbd','contratos.subvencion','cargo','rbd']); 
 
 
     if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
