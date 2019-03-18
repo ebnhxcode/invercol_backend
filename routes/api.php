@@ -29,5 +29,6 @@ Route::get('/cargos', 'Api\ResourcesController@cargos');
 Route::get('/funciones', 'Api\ResourcesController@funciones');
 Route::get('/tipo_funciones', 'Api\ResourcesController@tipoFunciones');
 Route::get('/tipo_cargos', 'Api\ResourcesController@tipoCargos');
+Route::get('/rbds', 'Api\ResourcesController@rbds');
 
 

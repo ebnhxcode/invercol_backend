@@ -7,10 +7,35 @@ use \App\Models\FichaTrabajador;
 
 class FichaTrabajadorController extends Controller
 {
-  public function index()
+
+  private $per_page;
+
+  public function validatePagination ($request) {
+    if (!$request->per_page) {
+        $this->per_page = 10;
+    } else {
+        $this->per_page = $request->per_page;
+    }
+  }
+
+
+  public function index(Request $request)
   {
-    $this->ficha_trabajadores = FichaTrabajador::all(); 
-    return $this->ficha_trabajadores;
+    $this->validatePagination($request);
+
+    $this->ficha_trabajadores = FichaTrabajador::with(['cargo','rbd']); 
+
+
+    if ($request->wantsJson() || $request->ajax() || $request->isXmlHttpRequest()) {
+            
+      return response()->json([
+        'status'=>200,
+        'msg'=>'ok',
+        'ficha_trabajadores'=>$this->ficha_trabajadores->paginate((int)$this->per_page),
+      ]);
+    }
+
+    return $this->ficha_trabajadores->get();
   }
 
   public function create()

@@ -36,15 +36,6 @@ class FichaTrabajador extends Model
 
   # Belongs to
 
-
-  public function establecimiento () {
-    return $this->belongsTo(\App\Models\Establecimiento::class, 'establecimiento_id');
-  }
-
-  public function subvencion () {
-    return $this->belongsTo(\App\Models\Subvencion::class, 'subvencion_id');
-  }
-
   public function cargo () {
     return $this->belongsTo(\App\Models\Cargo::class, 'cargo_id');
   }

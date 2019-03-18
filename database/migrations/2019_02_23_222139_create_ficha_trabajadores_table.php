@@ -20,7 +20,9 @@ class CreateFichaTrabajadoresTable extends Migration
             $table->string('ficha_nombre')->nullable();
             $table->string('ficha_apellido_paterno')->nullable();
             $table->string('ficha_apellido_materno')->nullable();
-            $table->string('ficha_fecha_nacimiento')->nullable();
+            $table->date('ficha_fecha_nacimiento')->nullable();
+
+            $table->date('ficha_fecha_ingreso')->nullable();
             
             $table->integer('cargo_id')->nullable();
             $table->integer('rbd_id')->nullable();
